@@ -1,0 +1,81 @@
+﻿<Window x:Class="testTreeView.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:testTreeView.Views"
+        xmlns:vm="clr-namespace:testTreeView.ViewModels"
+        xmlns:models="clr-namespace:testTreeView.Models"
+        xmlns:converters="clr-namespace:testTreeView.Views.Converters"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:MainWindowViewModel}"
+        Title="基础数据管理" Height="750" Width="950" MinHeight="600" MinWidth="800">
+    <Window.Resources>
+        <Style x:Key="Gernal" TargetType="Button">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="60"/>
+        </Style>
+        <converters:NullToBoolConverter x:Key="NullToBoolConverter"/>
+        <converters:StringToImageSourceConverter x:Key="StringToImageSourceConverter"/>
+        <converters:PartToTypeDefineVM x:Key="PartToTypeDefineVM"/>
+        <converters:PartToPropertyDefineVM x:Key="PartToPropertyDefineVM"/>
+        <converters:PartToLocationDefineVM x:Key="PartToLocationDefineVM"/>
+    </Window.Resources>
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Column="0" Grid.Row="0">
+            <GroupBox Header="类型树" Margin="5" Background="AliceBlue">
+                <DockPanel LastChildFill="True">
+                    <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,2">
+                        <Button DockPanel.Dock="Bottom" Content="添加" Height="30" Width="60" Margin="10,2" Command="{Binding AddPartTypeCommand}"/>
+                        <Button DockPanel.Dock="Bottom" Content="删除" Height="30" Width="60" Margin="10,2" Command="{Binding RemovePartTypeCommand}"/>
+                    </StackPanel>
+
+                    <TreeView DockPanel.Dock="Top" FontSize="17" ItemsSource="{Binding PartTypeTree.RootPartTypeCollection}"  SelectedItemChanged="TreeView_SelectedItemChanged" MouseDoubleClick="TreeView_MouseDoubleClick">
+                        <TreeView.ItemTemplate>
+                            <HierarchicalDataTemplate DataType="{x:Type models:PartType}" ItemsSource="{Binding Children}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="{Binding Icon,Converter={StaticResource StringToImageSourceConverter}}" Height="16" Width="16"/>
+                                    <TextBlock Text="{Binding Code}"/>
+                                    <TextBlock Text="—"/>
+                                    <TextBlock Text="{Binding DisplayName}"/>
+                                </StackPanel>
+                            </HierarchicalDataTemplate>
+                        </TreeView.ItemTemplate>
+                    </TreeView>
+                </DockPanel>
+            </GroupBox>
+        </Border>
+        
+        <Button Grid.Column="1" Grid.Row="1" Content="保存" Height="30" Width="60" 
+                VerticalAlignment="Top" HorizontalAlignment="Center" Command="{Binding SaveCommand}"/>
+
+        <Border  Grid.Row="0" Grid.Column="1">
+            <TabControl  Margin="10"  IsEnabled="{Binding CurrentPartType, Converter={StaticResource NullToBoolConverter}}"
+                         >
+                <TabItem Header="类型定义"  DataContext="{Binding CurrentPartType,Converter={StaticResource PartToTypeDefineVM}}" >
+                    <local:TypeDefineView/>
+                </TabItem>
+                <TabItem Header="种子定义">
+                    <local:SeedDefineView/>
+                </TabItem>
+                <TabItem Header="属性定义"  DataContext="{Binding CurrentPartType,Converter={StaticResource PartToPropertyDefineVM}}">
+                    <local:PropertyDefineView/>
+                </TabItem>
+                <TabItem Header="装配规则定义"></TabItem>
+                <TabItem Header="定位方式定义" DataContext="{Binding CurrentPartType,Converter={StaticResource PartToLocationDefineVM}}">
+                    <local:LocationModeDefineView/>
+                </TabItem>
+                <TabItem Header="技术要求配置"></TabItem>
+            </TabControl>
+        </Border>
+
+    </Grid>
+</Window>

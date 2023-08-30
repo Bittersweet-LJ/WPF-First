@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parts>
+  <item code="aaa" displayName="螺栓" icon="C:\Users\AideSoftware\source\repos\testTreeView\Resources\partIcon\冰淇淋.png" codeRules="阿斯顿" nameRules="撒旦" isReplaceable="True" isAssembleable="True" />
+  <item code="bbb" displayName="撒旦" icon="C:\Users\AideSoftware\source\repos\testTreeView\Resources\partIcon\红酒.png" codeRules="ss" nameRules="" isReplaceable="True" isAssembleable="False">
+    <item code="ccc" displayName="" icon="C:\Users\AideSoftware\source\repos\testTreeView\Resources\partIcon\鸡腿.png" codeRules="fsdf" nameRules="" isReplaceable="False" isAssembleable="True" />
+  </item>
+  <item code="ddd" displayName="损失" icon="C:\Users\AideSoftware\source\repos\testTreeView\Resources\partIcon\棉花糖.png" codeRules="" nameRules="" isReplaceable="False" isAssembleable="False" />
+  <item code="xxx" displayName="安安" icon="C:\Users\AideSoftware\source\repos\testTreeView\Resources\partIcon\红酒.png" codeRules="vvv" nameRules="asa" isReplaceable="True" isAssembleable="False">
+    <item code="yyy" displayName="呆呆" icon="C:\Users\AideSoftware\source\repos\testTreeView\Resources\partIcon\冰淇淋.png" codeRules="sdd" nameRules="as" isReplaceable="True" isAssembleable="False">
+      <item code="zzz" displayName="暗暗" icon="C:\Users\Bittersweet\Desktop\testTreeView\Resources\partIcon\鸡腿.png" codeRules="大苏打" nameRules="aaaa" isReplaceable="True" isAssembleable="False" />
+    </item>
+  </item>
+</parts>

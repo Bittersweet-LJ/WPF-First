@@ -1,0 +1,25 @@
+﻿<Window x:Class="testTreeView.Views.InputLocationModelNameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:testTreeView.Views"
+        mc:Ignorable="d"
+        Title="新建定位方式" Height="120" Width="400">
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,5">
+                <Label Content="定位方式名称"   VerticalAlignment="Center" />
+                <TextBox  Text="{Binding RelativeSource={RelativeSource AncestorType=local:InputLocationModelNameWindow},Path=LocationName}" 
+                          Height="30" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" VerticalContentAlignment="Center"/>
+            </StackPanel>
+            <DockPanel>
+                <Button Height="30" Width="60" Margin="40,5" DockPanel.Dock="Right" Content="取消" Click="Cancel_Button_Click"/>
+                <Button Height="30" Width="60" Margin="0,5" HorizontalAlignment="Right" Content="确定" Click="Button_Click"/>
+            </DockPanel>
+
+        </StackPanel>
+
+
+    </Grid>
+</Window>

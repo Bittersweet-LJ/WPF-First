@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <Part code="aaa">
+    <Location isDefault="False">
+      <Name>a</Name>
+      <DisplayName>芜湖</DisplayName>
+      <BasePartCode></BasePartCode>
+      <Mode>0</Mode>
+    </Location>
+    <Location isDefault="True">
+      <Name>水水水水水</Name>
+      <DisplayName>士大夫</DisplayName>
+      <BasePartCode></BasePartCode>
+      <Mode>0</Mode>
+    </Location>
+  </Part>
+  <Part code="bbb">
+    <Location isDefault="False">
+      <Name>as</Name>
+      <DisplayName>sda</DisplayName>
+      <BasePartCode>bbb</BasePartCode>
+      <Mode>0</Mode>
+    </Location>
+    <Location isDefault="False">
+      <Name>ccc</Name>
+      <DisplayName>vsdf</DisplayName>
+      <BasePartCode>ddd</BasePartCode>
+      <Mode>0</Mode>
+    </Location>
+    <Location isDefault="True">
+      <Name>飞洒</Name>
+      <DisplayName>画法</DisplayName>
+      <BasePartCode>ccc</BasePartCode>
+      <Mode>0</Mode>
+    </Location>
+  </Part>
+  <Part code="ccc">
+    <Location isDefault="False">
+      <Name>撒旦</Name>
+      <DisplayName>啊啊</DisplayName>
+      <BasePartCode></BasePartCode>
+      <Mode>0</Mode>
+    </Location>
+    <Location isDefault="True">
+      <Name>啊啊</Name>
+      <DisplayName>呆呆</DisplayName>
+      <BasePartCode></BasePartCode>
+      <Mode>0</Mode>
+    </Location>
+  </Part>
+  <Part code="ddd">
+    <Location isDefault="False">
+      <Name>fffff</Name>
+      <DisplayName></DisplayName>
+      <BasePartCode></BasePartCode>
+      <Mode>0</Mode>
+    </Location>
+  </Part>
+  <Part code="xxx">
+    <Location isDefault="False">
+      <Name>dasx</Name>
+      <DisplayName>zxczxc</DisplayName>
+      <BasePartCode></BasePartCode>
+      <Mode>0</Mode>
+    </Location>
+    <Location isDefault="False">
+      <Name>axvb</Name>
+      <DisplayName>asd</DisplayName>
+      <BasePartCode></BasePartCode>
+      <Mode>0</Mode>
+    </Location>
+  </Part>
+  <Part code="yyy">
+    <Location isDefault="False">
+      <Name>fafa</Name>
+      <DisplayName></DisplayName>
+      <BasePartCode></BasePartCode>
+      <Mode>0</Mode>
+    </Location>
+  </Part>
+  <Part code="zzz">
+    <Location isDefault="False">
+      <Name>aaaaa</Name>
+      <DisplayName></DisplayName>
+      <BasePartCode></BasePartCode>
+      <Mode>0</Mode>
+    </Location>
+  </Part>
+</Root>

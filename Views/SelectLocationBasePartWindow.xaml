@@ -1,0 +1,42 @@
+﻿<Window x:Class="testTreeView.Views.SelectLocationBasePartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:testTreeView.Views"
+        xmlns:models="clr-namespace:testTreeView.Models"
+        xmlns:vm="clr-namespace:testTreeView.ViewModels"
+        xmlns:converters="clr-namespace:testTreeView.Views.Converters"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:MainWindowViewModel}"
+        Title="选择基准零件" Height="600" Width="300">
+    <Window.Resources>
+        <converters:StringToImageSourceConverter x:Key="StringToImageSourceConverter"/>
+    </Window.Resources>
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <GroupBox Header="类型树" Margin="5" Background="AliceBlue">
+            <DockPanel LastChildFill="True">
+                <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,2">
+                    <Button DockPanel.Dock="Bottom" Content="确定" Height="30" Width="60" Margin="10,2" Click="Button_Click"/>
+                </StackPanel>
+
+                <TreeView DockPanel.Dock="Top" FontSize="17" ItemsSource="{Binding PartTypeTree.RootPartTypeCollection}"  
+                          SelectedItemChanged="TreeView_SelectedItemChanged">
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate DataType="{x:Type models:PartType}" ItemsSource="{Binding Children}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding Icon,Converter={StaticResource StringToImageSourceConverter}}" Height="16" Width="16"/>
+                                <TextBlock Text="{Binding Code}"/>
+                                <TextBlock Text="—"/>
+                                <TextBlock Text="{Binding DisplayName}"/>
+                            </StackPanel>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+            </DockPanel>
+        </GroupBox>
+    </Grid>
+</Window>
