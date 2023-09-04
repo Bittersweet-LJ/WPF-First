@@ -153,7 +153,7 @@ namespace testTreeView.Services
         internal void InitPartTypeTree()
         {
             //内容文件
-            //string rootDirectory = "Resources/PartTypes.xml";
+            //string rootDirectory = "Resources/PartTypes.xml"; // Todo:System.AppDomain.CurrentDomain.SetupInformation.ApplicationBase 
             //string rootDirectory = "C:/Users/AideSoftware/source/repos/testTreeView/Resources/PartTypes.xml";
             string rootDirectory = ConstData.PartRootDirectory;
 
